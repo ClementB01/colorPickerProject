@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="colorPickerProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2g-XZ-GI4">
+                                <rect key="frame" x="140" y="427" width="134" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="Pick a color">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="rMc-dB-NpJ" kind="show" identifier="pickColor" id="WKv-WY-vF6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="green"/>
+                        <constraints>
+                            <constraint firstItem="h2g-XZ-GI4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6Vn-T8-LI1"/>
+                            <constraint firstItem="h2g-XZ-GI4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7o2-pF-GB8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28" y="138"/>
+        </scene>
+        <!--Color Picker View Controller-->
+        <scene sceneID="CK2-jM-3pr">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="rMc-dB-NpJ" customClass="ColorPickerViewController" customModule="colorPickerProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hHf-A4-Cg7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="107" translatesAutoresizingMaskIntoConstraints="NO" id="Mib-yX-FNe">
+                                <rect key="frame" x="159" y="197" width="96" height="502.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3w-wz-gxs">
+                                        <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
+                                        <state key="normal" image="greenIcon"/>
+                                        <connections>
+                                            <action selector="ClickEvent:" destination="rMc-dB-NpJ" eventType="touchUpInside" id="450-dd-JX6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzi-Ty-Bt9">
+                                        <rect key="frame" x="0.0" y="203" width="96" height="96"/>
+                                        <state key="normal" image="orangeIcon"/>
+                                        <connections>
+                                            <action selector="ClickEvent:" destination="rMc-dB-NpJ" eventType="touchUpInside" id="NKd-ca-3N2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HfS-jE-GZg">
+                                        <rect key="frame" x="0.0" y="406" width="96" height="96.5"/>
+                                        <state key="normal" image="purpleIcon"/>
+                                        <connections>
+                                            <action selector="ClickEvent:" destination="rMc-dB-NpJ" eventType="touchUpInside" id="HYR-l9-ZVF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Mib-yX-FNe" firstAttribute="centerX" secondItem="hHf-A4-Cg7" secondAttribute="centerX" id="qBf-H4-uyG"/>
+                            <constraint firstItem="Mib-yX-FNe" firstAttribute="centerY" secondItem="hHf-A4-Cg7" secondAttribute="centerY" id="wlg-QA-ass"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dyw-dq-OYv"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zxz-P7-Shk"/>
+                    <connections>
+                        <outlet property="greenButton" destination="P3w-wz-gxs" id="gp4-qu-6h6"/>
+                        <outlet property="orangeButton" destination="Pzi-Ty-Bt9" id="3Fi-KJ-gMV"/>
+                        <outlet property="purpleButton" destination="HfS-jE-GZg" id="4bA-2i-7Ja"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I3E-vS-IxD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="853.62318840579712" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="greenIcon" width="96" height="96"/>
+        <image name="orangeIcon" width="96" height="96"/>
+        <image name="purpleIcon" width="96" height="96.5"/>
+        <namedColor name="green">
+            <color red="0.45899999141693115" green="0.74900001287460327" blue="0.66699999570846558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
