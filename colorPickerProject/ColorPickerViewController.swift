@@ -16,7 +16,8 @@ class ColorPickerViewController: UIViewController {
     @IBOutlet weak var purpleButton: UIButton!
     
     
-    var delegate: ColorPickerViewDelegate?
+    //var delegate: ColorPickerViewDelegate?
+    var completionHandler: ((UIColor) -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +28,14 @@ class ColorPickerViewController: UIViewController {
     @IBAction func ClickEvent(_ sender: UIButton){
         switch sender {
         case greenButton :
-            delegate?.userDidChooseColor(color: ColorAsset.green.color)
+            //delegate?.userDidChooseColor(color: ColorAsset.green.color)
+            completionHandler?(ColorAsset.green.color)
         case orangeButton:
-            delegate?.userDidChooseColor(color: ColorAsset.orange.color)
+            //delegate?.userDidChooseColor(color: ColorAsset.orange.color)
+            completionHandler?(ColorAsset.orange.color)
         case purpleButton:
-            delegate?.userDidChooseColor(color: ColorAsset.purple.color)
+            //delegate?.userDidChooseColor(color: ColorAsset.purple.color)
+            completionHandler?(ColorAsset.purple.color)
         default:
             break
         }

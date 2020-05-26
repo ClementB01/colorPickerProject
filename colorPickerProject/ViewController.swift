@@ -18,14 +18,11 @@ class ViewController: UIViewController {
     // MARK: - Navigation
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
         let destVC = segue.destination as! ColorPickerViewController
-        destVC.delegate = self
-        // Pass the selected object to the new view controller.
+        //destVC.delegate = self
+        destVC.completionHandler = userDidChooseColor(color:)
     }
-}
-
-extension ViewController: ColorPickerViewDelegate {
+    
     func userDidChooseColor(color: UIColor) {
         
         self.dismiss(animated: true, completion: nil)
@@ -48,4 +45,28 @@ extension ViewController: ColorPickerViewDelegate {
         
     }
 }
+
+/*extension ViewController: ColorPickerViewDelegate {
+    func userDidChooseColor(color: UIColor) {
+        
+        self.dismiss(animated: true, completion: nil)
+        
+        let previousColor = self.view.backgroundColor
+        
+       
+        self.view.backgroundColor = color
+        
+        let alert = UIAlertController(title: "Message", message: "Voulez vous gardez cette couleur de fond", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Non!", style: .default, handler: { (_) in
+            //self.view.backgroundColor = previousColor
+             UIView.animate(withDuration: 2, animations: {self.view.backgroundColor = previousColor})
+        }))
+        alert.addAction(UIAlertAction(title: "Oui!", style: .default, handler: { (_) in
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+}*/
 
